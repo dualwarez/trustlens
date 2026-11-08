@@ -2,6 +2,8 @@
 
 **Paste any untrusted document. TrustLens treats it as hostile input, proves it safe step by step, and turns it into verified, source-grounded structured data.**
 
+🔗 **Live demo: [trustlens-pearl.vercel.app](https://trustlens-pearl.vercel.app)**
+
 Built for the [Clocked Build Challenge](https://clocked.rezolve.ai/challenge) (Oct 21 – Nov 10, 2026). TrustLens meaningfully uses **all ten** Clocked endpoints.
 
 ![TrustLens UI](docs/screenshot.png)
@@ -55,7 +57,7 @@ Nothing here is decorative — delete any endpoint and the app demonstrably chan
 ## Run it
 
 ```bash
-git clone <repo-url> && cd trustlens
+git clone https://github.com/dualwarez/trustlens && cd trustlens
 npm install
 cp .env.example .env          # put your Clocked API key in CLOCKED_API_KEY
 npm start                     # http://localhost:3000

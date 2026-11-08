@@ -16,3 +16,6 @@ Thumbs.db
 *.log
 npm-debug.log*
 .zcode-site/
+
+.vercel
+.env*
