@@ -1,0 +1,19 @@
+{
+  "name": "trustlens",
+  "version": "1.0.0",
+  "description": "TrustLens — zero-trust document processing pipeline powered by Clocked (Rezolve.ai). Clocked Build Challenge entry.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5"
+  },
+  "license": "MIT"
+}

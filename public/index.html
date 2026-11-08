@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrustLens — Zero-Trust Document Processing, powered by Clocked</title>
+  <meta name="description" content="Paste any untrusted document. TrustLens scans it for prompt injection, masks PII, extracts and verifies structured data — a live safety pipeline powered by all nine Clocked endpoints.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">🛡️</span>
+      <div>
+        <h1>TrustLens</h1>
+        <p class="tagline">Zero-trust document processing — powered by <strong>Clocked</strong></p>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="credit-pill" id="credit-pill" title="Clocked credits remaining">— credits</span>
+      <a class="github-link" href="https://github.com/TODO/trustlens" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- LEFT: input column -->
+    <section class="panel input-panel">
+      <div class="panel-head">
+        <h2>1 · Drop in an untrusted document</h2>
+        <p class="hint">Customer email, invoice, support ticket, contract clause — anything. It is treated as hostile input until proven safe.</p>
+      </div>
+
+      <textarea id="doc-input" spellcheck="false" placeholder="Paste or type the untrusted text here…&#10;&#10;Try the sample documents below — including one with a hidden prompt-injection attack."></textarea>
+
+      <div class="samples" id="samples">
+        <span class="samples-label">Try a sample:</span>
+        <!-- sample chips injected by app.js -->
+      </div>
+
+      <div class="actions">
+        <button id="run-btn" class="btn primary" disabled>Run safety pipeline ▶</button>
+        <button id="quick-btn" class="btn" disabled title="All three safety checks in one billed Pipeline API call">⚡ Quick scan</button>
+        <button id="clear-btn" class="btn ghost">Clear</button>
+      </div>
+
+      <div class="panel-head second">
+        <h2>2 · Ask about it (optional)</h2>
+        <p class="hint">Rerank finds the passages that answer your question; Verify checks the answer against the source.</p>
+      </div>
+      <div class="ask-row">
+        <input id="question-input" type="text" placeholder="e.g. What is the total amount and due date?" disabled>
+        <button id="ask-btn" class="btn" disabled>Ask</button>
+      </div>
+
+      <div class="panel-head second">
+        <h2>3 · Cross-check a second document (optional)</h2>
+        <p class="hint">Compare spots mismatches between this document and a reference (e.g. invoice vs purchase order).</p>
+      </div>
+      <textarea id="doc-b-input" class="small" spellcheck="false" placeholder="Paste the reference document here…" disabled></textarea>
+      <div class="actions">
+        <button id="compare-btn" class="btn" disabled>Compare documents ⚖</button>
+      </div>
+    </section>
+
+    <!-- RIGHT: results column -->
+    <section class="panel results-panel">
+      <div class="panel-head">
+        <h2>Pipeline</h2>
+        <p class="hint">Every step is a real Clocked endpoint. Guard can halt the pipeline; every output shown changes what TrustLens does next.</p>
+      </div>
+
+      <ol class="pipeline" id="pipeline">
+        <!-- steps injected by app.js -->
+      </ol>
+
+      <div id="alert-box" class="alert hidden"></div>
+
+      <div class="results-tabs" id="tabs" role="tablist">
+        <button class="tab active" data-tab="record" role="tab">Structured record</button>
+        <button class="tab" data-tab="fields" role="tab">Fields &amp; sources</button>
+        <button class="tab" data-tab="privacy" role="tab">PII mask</button>
+        <button class="tab" data-tab="verify" role="tab">Grounding check</button>
+        <button class="tab" data-tab="compare" role="tab">Compare</button>
+        <button class="tab" data-tab="answer" role="tab">Answer</button>
+      </div>
+
+      <div class="tab-body" id="tab-record"></div>
+      <div class="tab-body hidden" id="tab-fields"></div>
+      <div class="tab-body hidden" id="tab-privacy"></div>
+      <div class="tab-body hidden" id="tab-verify"></div>
+      <div class="tab-body hidden" id="tab-compare"></div>
+      <div class="tab-body hidden" id="tab-answer"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>TrustLens</strong> — built for the Clocked Build Challenge (Oct 21 – Nov 10, 2026). Uses <strong>all ten</strong> Clocked endpoints: <code>Guard</code> · <code>Protect</code> · <code>Inspect</code> · <code>Decide</code> · <code>Extract</code> · <code>Fill</code> · <code>Verify</code> · <code>Compare</code> · <code>Rerank</code> · <code>Pipeline</code>.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
