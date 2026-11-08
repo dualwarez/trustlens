@@ -413,6 +413,11 @@ app.get("/api/credits", (req, res) => {
 
 /* ---------- boot ---------- */
 
-app.listen(PORT, () => {
-  console.log(`[trustlens] listening on http://localhost:${PORT}`);
-});
+// Run standalone (npm start), but export the app so Vercel serverless can wrap it.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`[trustlens] listening on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
